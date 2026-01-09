@@ -1,0 +1,25 @@
+Output Column,Requirements
+CB Constituent ID,* unique ID per constituent
+CB Constituent Type,"* required, either ""Person"" or ""Company"""
+CB First Name,* first name (required if type is Person)
+CB Last Name,* last name (required if type is Person)
+CB Company Name,* company name (required if type is Company)
+CB Created At,"* required, timestamp of when the constituent was first created in the system"
+CB Email 1 (Standardized),"* if present, must be a standardized and well formatted email for a valid domain"
+CB Email 2 (Standardized),"* if present, must be a standardized and well formatted email for a valid domain, and must be not equal to email 1
+* cannot be present if email 1 is not present"
+CB Title,"* one of ""Mr."", ""Mrs."", ""Ms."", ""Dr."", or empty string"
+CB Tags,"* comma separated list of strings
+* the client wants us to use the API here https://6719768f7fc4c5ff8f4d84f1.mockapi.io/api/v1/tags to get a mapping of tags from original to desired value (name -> mapped_name), as their team has put some effort into cleaning up the tags and is surfacing the mapping to us via this API (feel free to ignore the IDs in the API result, they don't mean anything)"
+CB Background Information,"* a formatted string that includes the job title and martial status of the constituent
+
+examples:
+* if both job title and marital status are present: ""Job Title: Professor; Marital Status: Married""
+* if only job title is present: ""Job Title: Professor""
+* if only marital status is present: ""Marital Status: Married"""
+CB Lifetime Donation Amount,"* currency amount formatted like ""$10.00"" representing the total amount the constituent has ever donated
+* should be empty string if constituent has never donated"
+CB Most Recent Donation Date,"* timestamp of the constituent's most recent donation
+* should be empty string if constituent has never donated"
+CB Most Recent Donation Amount ,"* constituent's most recent donation amount
+* should be empty string if constituent has never donated"
